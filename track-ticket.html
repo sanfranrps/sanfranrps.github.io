@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Ticket - San Francisco Roleplay</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #0b0c10; background-image: linear-gradient(rgba(255,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,0,0.05) 1px, transparent 1px); background-size: 50px 50px; color: white; padding-top: 80px; }
+        a { text-decoration: none; color: inherit; }
+        header { background-color: rgba(11, 12, 16, 0.95); width: 100%; height: 80px; position: fixed; top: 0; left: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 1000; border-bottom: 1px solid rgba(255,0,0,0.1); }
+        .header-left { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; }
+        .header-left img { height: 40px; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { font-size: 0.9rem; opacity: 0.8; }
+        nav a:hover, nav a.active { opacity: 1; color: #ff3333; }
+        
+        .container { max-width: 600px; margin: 80px auto; padding: 0 20px; text-align: center; }
+        .form-box { background: #111317; border: 1px solid rgba(255,0,0,0.1); padding: 40px; border-radius: 12px; margin-top: 30px; }
+        input { width: 100%; padding: 12px; background: #1a1c22; border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 6px; font-size: 1rem; margin-bottom: 20px; text-align: center; }
+        button { width: 100%; padding: 14px; background: #ff3333; border: none; color: white; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+        button:hover { background: #e62e2e; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="https://cdn.discordapp.com/attachments/1519875031541350571/1520135519881789460/SanFran_Logo.png?ex=6a5fbc06&is=6a5e6a86&hm=07d175ff33a1303f5092ff9762a21fec419b13c217c9ef4457e17a49af9bd710" alt="Logo">
+            <span>San Francisco Roleplay</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="track-ticket.html" class="active">Track Ticket</a></li>
+                <li><a href="donations.html">Donations</a></li>
+                <li><a href="recruitment.html">Recruitment</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="ban-appeal.html">Ban Appeal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="font-size:2.2rem;">Track Your <span style="color:#ff3333;">Ticket</span></h1>
+        <p style="opacity:0.7; margin-top:10px;">Enter your ticket reference ID to check its current status.</p>
+
+        <form class="form-box" onsubmit="event.preventDefault(); alert('Ticket Search Feature: Connect database or API.');">
+            <input type="text" placeholder="e.g. #SFRP-9821" required>
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+</body>
+</html>
