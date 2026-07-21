@@ -5,34 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Francisco Roleplay</title>
     <style>
-        /* CSS resets and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif; /* A clean modern font */
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body {
             background-color: #0b0c10;
             background-image: 
                 linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px; /* The background grid */
+            background-size: 50px 50px;
             color: white;
-            padding-top: 80px; /* Header space */
+            padding-top: 80px;
         }
-
         a { text-decoration: none; color: inherit; transition: 0.2s; }
-
-        /* Header / Navigation */
+        
         header {
             background-color: rgba(11, 12, 16, 0.95);
             width: 100%;
             height: 80px;
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -40,215 +30,93 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 0, 0, 0.1);
         }
+        .header-left { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; }
+        .header-left img { height: 40px; border-radius: 4px; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { font-size: 0.9rem; opacity: 0.8; }
+        nav a:hover, nav a.active { opacity: 1; color: #ff3333; }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .header-left img { height: 35px; }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        nav a:hover, nav a.active {
-            opacity: 1;
-            color: #ff3333;
-        }
-
-        /* Main Hero Section */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 100px 5% 60px;
-        }
-
-        .main-logo {
-            width: 250px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        h1 span {
-            color: #ff3333; /* The colored text */
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6); /* Glow effect */
-        }
-
-        .hero-description {
-            max-width: 600px;
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.8;
-            margin-bottom: 40px;
-        }
-
-        /* Buttons */
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 80px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: #ff3333;
-            border: none;
-            color: white;
-        }
-
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px 5% 60px; }
+        .main-logo { width: 220px; margin-bottom: 30px; filter: drop-shadow(0 0 15px rgba(255,0,0,0.3)); }
+        
+        h1 { font-size: 3rem; text-transform: uppercase; font-weight: 800; margin-bottom: 15px; }
+        h1 span { color: #ff3333; text-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+        
+        .hero-description { max-width: 600px; font-size: 1rem; line-height: 1.6; opacity: 0.8; margin-bottom: 40px; }
+        .btn-container { display: flex; gap: 15px; margin-bottom: 80px; flex-wrap: wrap; justify-content: center; }
+        
+        .btn { padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+        .btn-primary { background-color: #ff3333; border: none; color: white; }
         .btn-primary:hover { background-color: #e62e2e; }
-
-        .btn-secondary {
-            background-color: #1a1c22;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+        .btn-secondary { background-color: #1a1c22; border: 1px solid rgba(255, 255, 255, 0.1); }
         .btn-secondary:hover { background-color: #25282f; }
 
-        /* Feature Cards Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: #111317;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 0, 0, 0.1);
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: rgba(255, 0, 0, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
-        }
-
-        /* The icon container */
-        .icon-box {
-            background-color: #1a1c22;
-            color: #ff3333;
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .card-p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            line-height: 1.5;
-        }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto; }
+        .card { background-color: #111317; padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 0, 0, 0.1); transition: 0.3s; }
+        .card:hover { border-color: rgba(255, 0, 0, 0.3); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1); }
+        .icon-box { background-color: #1a1c22; color: #ff3333; width: 45px; height: 45px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; }
+        h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+        .card-p { font-size: 0.9rem; opacity: 0.7; line-height: 1.5; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-left">
-            <img src="logo.png" alt="SF Roleplay Logo">
+            <img src="https://cdn.discordapp.com/attachments/1519875031541350571/1520135519881789460/SanFran_Logo.png?ex=6a5fbc06&is=6a5e6a86&hm=07d175ff33a1303f5092ff9762a21fec419b13c217c9ef4457e17a49af9bd710" alt="SF Roleplay Logo">
             <span>San Francisco Roleplay</span>
         </div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Track Ticket</a></li>
-                <li><a href="#">Donations</a></li>
-                <li><a href="#">Recruitment</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Ban Appeal</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="track-ticket.html">Track Ticket</a></li>
+                <li><a href="donations.html">Donations</a></li>
+                <li><a href="recruitment.html">Recruitment</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="ban-appeal.html">Ban Appeal</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="hero">
-        <!-- Main central logo -->
-        <img src="logo.png" alt="San Francisco Roleplay Logo" class="main-logo">
-
+        <img src="https://cdn.discordapp.com/attachments/1519875031541350571/1520135519881789460/SanFran_Logo.png?ex=6a5fbc06&is=6a5e6a86&hm=07d175ff33a1303f5092ff9762a21fec419b13c217c9ef4457e17a49af9bd710" alt="San Francisco Roleplay Logo" class="main-logo">
         <h1>San Francisco <span>Roleplay</span></h1>
-        
-        <p class="hero-description">
-            An immersive and authentic roleplay community set in the heart of San Francisco. Built with respect, realism, and a focus on quality stories. Join us and make your mark on the City by the Bay.
-        </p>
+        <p class="hero-description">An immersive roleplay community built on respect, realism, and teamwork. Join us and write your story.</p>
 
         <div class="btn-container">
-            <button class="btn btn-primary">Join Discord Server →</button>
-            <button class="btn btn-secondary">Apply for Staff</button>
-            <button class="btn btn-secondary">Get Support</button>
+            <a href="https://discord.gg" target="_blank" class="btn btn-primary">Join Discord Server →</a>
+            <a href="recruitment.html" class="btn btn-secondary">Apply for Staff</a>
+            <a href="support.html" class="btn btn-secondary">Get Support</a>
         </div>
 
         <div class="features-grid">
-            <div class="card">
-                <div class="icon-box">✉</div>
+            <a href="support.html" class="card">
+                <div class="icon-box">🌐</div>
                 <h3>Support</h3>
                 <p class="card-p">Get help from our staff team.</p>
-            </div>
-            <div class="card">
+            </a>
+            <a href="donations.html" class="card">
                 <div class="icon-box">🎁</div>
                 <h3>Donations</h3>
                 <p class="card-p">Support the server & get perks.</p>
-            </div>
-            <div class="card">
+            </a>
+            <a href="recruitment.html" class="card">
                 <div class="icon-box">👤</div>
                 <h3>Recruitment</h3>
                 <p class="card-p">Join the staff team.</p>
-            </div>
-            <div class="card">
-                <div class="icon-box">?</div>
+            </a>
+            <a href="faq.html" class="card">
+                <div class="icon-box">❓</div>
                 <h3>FAQ</h3>
                 <p class="card-p">Frequently asked questions.</p>
-            </div>
-            <div class="card">
-                <div class="icon-box">⚐</div>
+            </a>
+            <a href="ban-appeal.html" class="card">
+                <div class="icon-box">🔨</div>
                 <h3>Ban Appeal</h3>
                 <p class="card-p">Submit an appeal.</p>
-            </div>
+            </a>
         </div>
     </main>
 
