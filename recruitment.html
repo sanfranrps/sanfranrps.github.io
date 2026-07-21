@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recruitment - San Francisco Roleplay</title>
+    <title>Staff Recruitment - San Francisco Roleplay</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1519875031541350571/1520135519881789460/SanFran_Logo.png?ex=6a5fbc06&is=6a5e6a86&hm=07d175ff33a1303f5092ff9762a21fec419b13c217c9ef4457e17a49af9bd710" type="image/png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #0b0c10; background-image: linear-gradient(rgba(255,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,0,0.05) 1px, transparent 1px); background-size: 50px 50px; color: white; padding-top: 80px; }
@@ -15,13 +16,13 @@
         nav a { font-size: 0.9rem; opacity: 0.8; }
         nav a:hover, nav a.active { opacity: 1; color: #ff3333; }
         
-        .container { max-width: 750px; margin: 60px auto; padding: 0 20px; }
-        .form-box { background: #111317; border: 1px solid rgba(255,0,0,0.1); padding: 30px; border-radius: 12px; margin-top: 30px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        input, select, textarea { width: 100%; padding: 12px; background: #1a1c22; border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 6px; font-size: 0.95rem; }
-        button { width: 100%; padding: 14px; background: #ff3333; border: none; color: white; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 1rem; }
-        button:hover { background: #e62e2e; }
+        .container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .info-card { background: #111317; border: 1px solid rgba(255,0,0,0.1); padding: 35px; border-radius: 12px; margin-top: 30px; }
+        .info-card h2 { color: #ff3333; margin-bottom: 15px; }
+        .info-card p { opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
+        .requirements-list { margin-left: 20px; margin-bottom: 30px; opacity: 0.85; line-height: 1.8; }
+        .btn-apply { display: inline-block; width: 100%; text-align: center; padding: 14px; background: #ff3333; border: none; color: white; font-weight: bold; border-radius: 6px; font-size: 1.05rem; }
+        .btn-apply:hover { background: #e62e2e; }
     </style>
 </head>
 <body>
@@ -34,50 +35,34 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="support.html">Support</a></li>
-                <li><a href="track-ticket.html">Track Ticket</a></li>
                 <li><a href="donations.html">Donations</a></li>
                 <li><a href="recruitment.html" class="active">Recruitment</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="ban-appeal.html">Ban Appeal</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScMA5XP-0DQmfxnT24wFc4egFEJG9MNheMiUpzoSo9hjD4ipQ/viewform" target="_blank">Ban Appeal</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <div style="text-align:center;">
-            <h1 style="font-size:2.5rem;">Staff & Department <span style="color:#ff3333;">Applications</span></h1>
-            <p style="opacity:0.7; margin-top:8px;">Apply to join the San Francisco Roleplay staff team or department leadership.</p>
+            <h1 style="font-size:2.5rem;">Join Our <span style="color:#ff3333;">Staff Team</span></h1>
+            <p style="opacity:0.7; margin-top:8px;">Help keep San Francisco Roleplay fair, friendly, and immersive.</p>
         </div>
 
-        <form class="form-box" onsubmit="event.preventDefault(); alert('Application Submitted!');">
-            <div class="form-group">
-                <label>Discord Tag & ID</label>
-                <input type="text" placeholder="username#0000" required>
-            </div>
-            <div class="form-group">
-                <label>Age</label>
-                <input type="number" min="13" max="99" required>
-            </div>
-            <div class="form-group">
-                <label>Position Applying For</label>
-                <select required>
-                    <option value="">Choose Position...</option>
-                    <option value="staff">Staff Team (Moderator)</option>
-                    <option value="sfpd">San Francisco Police Department</option>
-                    <option value="sffd">San Francisco Fire Department</option>
-                    <option value="dispatch">Communications / Dispatch</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Previous Roleplay & Staff Experience</label>
-                <textarea rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label>Why should we choose you?</label>
-                <textarea rows="4" required></textarea>
-            </div>
-            <button type="submit">Submit Application</button>
-        </form>
+        <div class="info-card">
+            <h2>About the Staff Team</h2>
+            <p>Our Staff Team is responsible for moderating the server, assisting players with technical or rule-related issues, and maintaining high-quality roleplay standards across the community.</p>
+            
+            <h2>Basic Staff Requirements</h2>
+            <ul class="requirements-list">
+                <li>Must be an active member of San Francisco Roleplay.</li>
+                <li>Must have a working microphone and access to Discord.</li>
+                <li>Must demonstrate maturity, patience, and unbiased judgment.</li>
+                <li>Must be in good standing with zero recent server bans.</li>
+            </ul>
+
+            <a href="https://forms.gle/ue5Ny92wiStSGCdz9" target="_blank" class="btn-apply">Open Staff Application Form ↗</a>
+        </div>
     </div>
 </body>
 </html>
